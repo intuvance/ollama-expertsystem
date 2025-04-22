@@ -1,6 +1,6 @@
 # Ollama Docker Compose 
 
-(Ollama)[https://ollama.com/] is an open-source software platform that enables users to run large language models (LLMs) locally on their computers. 
+[Ollama](https://ollama.com/) is an open-source software platform that enables users to run large language models (LLMs) locally on their computers. 
 
 ### Run Ollama
 
