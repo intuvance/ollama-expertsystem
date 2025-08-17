@@ -1,0 +1,11 @@
+ports:
+  - name: Ollama 
+    description: Ollama is an open-source software platform that enables users to run LLMs locally
+    port: 11434
+    onOpen: open-browser
+    visibility: public
+  - name: Webui
+    description: Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline
+    port: 8095
+    onOpen: open-browser
+    visibility: public  
