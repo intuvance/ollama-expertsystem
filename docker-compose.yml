@@ -6,21 +6,31 @@ services:
     ports:
       - "8095:8080"
     environment:
-      - 'OLLAMA_API_BASE_URL=${OLLAMA_API_BASE_URL}'
-      - 'WEB_AUTH=${WEB_AUTH}'
+      - "OLLAMA_API_BASE_URL=${OLLAMA_API_BASE_URL}"
+      - "WEB_AUTH=${WEB_AUTH}"
     depends_on:
       - ollama
+    networks:
+      - llm-network
 
   ollama:
     image: ollama/ollama
     container_name: ollama
     restart: always
     ports:
-      - "11434:11434" 
+      - "11434:11434"
     volumes:
       - ollama:/root/.ollama
-    command: serve       
+    command: serve
+    networks:
+      - llm-network
 
 volumes:
   ollama:
-    name: ollama   
+    name: ollama
+
+networks:
+  llm-network:
+    name: llm-network
+    driver: bridge
+    external: true
