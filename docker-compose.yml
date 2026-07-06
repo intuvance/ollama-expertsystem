@@ -7,16 +7,14 @@ services:
       - "11434:11434"
     volumes:
       - ollama:/root/.ollama
-    command: serve
     networks:
-      - llm-network
+      - openmrs-network
+    command: serve
 
 volumes:
   ollama:
     name: ollama
 
 networks:
-  llm-network:
-    name: llm-network
-    driver: bridge
+  openmrs-network:
     external: true
